@@ -705,12 +705,14 @@ const handleInput = (event: Event) => {
 
 ### Unit Testing
 
-Use Vitest for unit tests:
+All unit tests live directly in the top-level `tests/` directory following the naming convention `tests/<algorithm-name>-algorithm.test.ts` (e.g. `tests/knn-algorithm.test.ts`, `tests/linear-regression-algorithm.test.ts`).
+
+Tests use Vitest and should cover `fit()`, `predict()`, performance metrics (`getMetrics()`), visualization payloads (`getVisualizationData()`), input validation, and `reset()`.
 
 ```typescript
-// algorithms/__tests__/ExampleAlgorithm.test.ts
+// tests/example-algorithm.test.ts
 import { describe, it, expect } from 'vitest';
-import { ExampleAlgorithm } from '../ExampleAlgorithm';
+import { ExampleAlgorithm } from '../algorithms/regression/ExampleAlgorithm';
 
 describe('ExampleAlgorithm', () => {
   it('should initialize with default parameters', () => {
